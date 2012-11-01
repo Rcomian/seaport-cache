@@ -1,0 +1,32 @@
+{
+    "name" : "seaport-cache",
+    "description" : "A caching layer for seaport that lets you run nicely even if the seaport server dies.",
+    "version" : "0.0.1",
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/rcomian/seaport-cache.git"
+    },
+    "main" : "seaport-cache.js",
+    "keywords" : [
+        "port",
+        "seaport",
+        "hub",
+        "cache"
+    ],
+    "directories" : {
+        "lib" : "./lib"
+    },
+    "dependencies" : {
+        "underscore" : "*",
+        "semver" : "*"
+    },
+    "engines" : {
+        "node" : ">=0.8.0"
+    },
+    "license" : "MIT",
+    "author" : {
+        "name" : "Jim Tupper",
+        "email" : "seaportcache@tupper.org.uk",
+        "url" : "http://tupper.org.uk"
+    }
+}
