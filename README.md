@@ -16,9 +16,10 @@ On the client use like this:
 
 ``` js
 var request = require('request');
+var seaport = require('seaport');
 var spcache = require('seaport-cache');
 
-var ports = spcache.seaport.connect(9090, { secret : 'beep boop' });
+var ports = seaport.connect(9090, { secret : 'beep boop' });
 var cache = spcache.getCache(ports);
 
 setInterval(function () {
@@ -33,7 +34,12 @@ setInterval(function () {
 methods
 =======
 
-var spcache = require('seaport-cache');
+var seaportcache = require('seaport-cache');
+
+seaportcache.getCache(ports)
+----------------------------
+
+Takes the ports object returned from `seaport.connect` and returns the cache object which you can query directly.
 
 cache.get(role, cb)
 -------------------
@@ -57,4 +63,4 @@ cache.getRoundRobin(role, cb)
 
 As with `get` but returns the first entry from the array on the first call, the second entry from the array on the second call, etc.
 
-Round robin is based on the exact query string used, so different query strings
+The round robin is based on the exact role string used, so different role queries get different sequences even if they match the name sequence of servers.
